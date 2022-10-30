@@ -1,38 +1,40 @@
+import os
+
 from flask import Flask
-# from flask_sqlalchemy import SQLAlchemy
 
-# app = Flask(__name__)
-# app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite3'
-# app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-# db = SQLAlchemy(app)
 
-# # Path: app\models.py
-# from app import db
+def create_app(test_config=None):
+    # create and configure the app
+    app = Flask(__name__, instance_relative_config=True)
+    app.config.from_mapping(
+        SECRET_KEY='dev',
+        DATABASE=os.path.join(app.instance_path, 'flaskr.sqlite'),
+    )
 
-# class User(db.Model):
-#     id = db.Column(db.Integer, primary_key=True)
-#     name = db.Column(db.String(50), nullable=False)
-#     email = db.Column(db.String(50), nullable=False)
-#     password = db.Column(db.String(50), nullable=False)
+    if test_config is None:
+        # load the instance config, if it exists, when not testing
+        app.config.from_pyfile('config.py', silent=True)
+    else:
+        # load the test config if passed in
+        app.config.from_mapping(test_config)
 
-#     def __repr__(self):
-#         return f"User('{self.name}', '{self.email}')"
+    # ensure the instance folder exists
+    try:
+        os.makedirs(app.instance_path)
+    except OSError:
+        pass
 
-# # Path: app\main.py
-# from app import app
-# from app.models import User
-
-# @app.route('/')
-# def index():
-#     user = User.query.filter_by(name='John').first()
-#     return user.email
-
-# if __name__ == '__main__':
-#     app.run(debug=True)
-
-# # Path: app\run.py
-# from app import app
-
-# if __name__ == '__main__':
-#     app.run(debug=True)
+    # a simple page that says hello
+    @app.route('/')
+    def first():
+        return 'Hi, this is the first page!'
     
+
+    @app.route('/hello')
+    def hello():
+        return 'Hello, World!'
+
+    from . import db
+    db.init_app(app)
+
+    return app
