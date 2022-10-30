@@ -1,0 +1,20 @@
+version: '3.7'
+
+services:
+
+  flask-api:
+    build: 
+      context: ./flaskr
+      dockerfile: Dockerfile
+    image: jsat/flask-dev
+    command: gunicorn --reload --bind 0.0.0.0:5000 flaskr.app:app
+    container_name: flask-api
+    ports:
+      - "5000:5000"
+    environment:
+      TZ: "Asia/Kolkata"
+    volumes:
+      - ./flaskr:/app
+
+
+  
