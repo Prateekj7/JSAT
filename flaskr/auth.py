@@ -23,8 +23,11 @@ def register():
             error = 'Username is required.'
         elif not password:
             error = 'Password is required.'
+        elif len(password)<5:
+            # assert len(password)<5 
+            error = 'Password must be at least 6 characters.'
         elif db.execute(
-            'SELECT id FROM employee WHERE name = ?', (username,)
+            'SELECT id FROM employee WHERE name = ?', (username)
         ).fetchone() is not None:
             error = 'User {} is already registered.'.format(username)
 
