@@ -96,12 +96,12 @@ This is what you need to use for the software and how to install them.
    git clone https://github.com/github_username/repo_name.git
    ```
 3. Install and Run Flask
-  ```sh
-  python3 -m venv env
-  source env/bin/activate
-  pip install -r requirements.txt
-  flask run
-  ```
+    ```sh
+    python3 -m venv env
+    source env/bin/activate
+    pip install -r requirements.txt
+    flask run
+    ```
 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
@@ -138,7 +138,6 @@ See the [open issues](https://github.com/vg18gupta/issues) for a full list of pr
 
 Prateek Saikia - [@duplicitops](https://twitter.com/duplicitops) - prateek98saikia@gmail.com
 
-Project Link: [https://github.com/vg18gupta/Ftx](vg18gupta)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
