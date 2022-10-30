@@ -48,6 +48,7 @@ CREATE TABLE supplier_item (
 CREATE TABLE order_item (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     item_id INTEGER NOT NULL,
+    employee_id INTEGER NOT NULL,
     quantity INTEGER NOT NULL,
     FOREIGN KEY (employee_id) REFERENCES employee (id),
     FOREIGN KEY (item_id) REFERENCES item (id)
@@ -58,7 +59,7 @@ CREATE TABLE customer_purchase (
     customer_id INTEGER NOT NULL,
     item_id INTEGER NOT NULL,
     price INTEGER NOT NULL,
-    FOREIGN KEY (customer_id) REFERENCES employee (id),
+    FOREIGN KEY (customer_id) REFERENCES customer (id),
     FOREIGN KEY (item_id) REFERENCES item (id)
 );
 
