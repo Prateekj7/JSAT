@@ -83,9 +83,9 @@ This is what you need to use for the software and how to install them.
   pip install python3
   ```
 * flask
-```sh
-pip3 install flask
-```
+  ```sh
+  pip3 install flask
+  ```
 
 
 ### Installation
