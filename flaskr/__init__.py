@@ -25,9 +25,6 @@ def create_app(test_config=None):
         pass
 
     # a simple page that says hello
-    @app.route('/')
-    def first():
-        return 'Hi, this is the first page!'
     
 
     @app.route('/hello')
@@ -42,5 +39,9 @@ def create_app(test_config=None):
 
     from . import customer
     app.register_blueprint(customer.cb)
+
+    from . import order
+    app.register_blueprint(order.obp)
+    app.add_url_rule('/', endpoint='index')
 
     return app

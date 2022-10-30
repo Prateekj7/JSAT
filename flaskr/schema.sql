@@ -56,11 +56,10 @@ CREATE TABLE order_item (
 
 CREATE TABLE customer_purchase (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
+    orderDate DATE NOT NULL,
     customer_id INTEGER NOT NULL,
-    item_id INTEGER NOT NULL,
     price INTEGER NOT NULL,
-    FOREIGN KEY (customer_id) REFERENCES customer (id),
-    FOREIGN KEY (item_id) REFERENCES item (id)
+    FOREIGN KEY (customer_id) REFERENCES customer (id)
 );
 
 CREATE TABLE customer (

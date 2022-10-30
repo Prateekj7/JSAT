@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}New Order{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+  <form method="post">
+    <label for="orderDate">Date</label>
+    <input name="orderDate" id="orderDate" value="{{ request.form['orderDate'] }}" required>
+    <label for="customer_id">customer_id</label>
+    <input name="customer_id" id="customer_id">{{ request.form['customer_id'] }}</input>
+    <label for="price">Price</label>
+    <input name="price" id="price" value="{{ request.form['price'] }}" required>
+    <input type="submit" value="Save">
+  </form>
+{% endblock %}

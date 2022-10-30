@@ -1,1 +1,6 @@
 1.prateek, prateek25saikia@gmail.com, 12345, admin
+
+<!-- {% if g.user %} -->
+                    <!-- <a class="action" href="{{ url_for('order.update', id=order['id']) }}">Edit</a>
+                    <a class="action" href="{{ url_for('order.delete', id=order['id']) }}">Delete</a> -->
+                <!-- {% endif %} -->
