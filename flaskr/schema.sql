@@ -67,8 +67,8 @@ CREATE TABLE customer (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     name TEXT NOT NULL,
     email TEXT NOT NULL,
-    password TEXT NOT NULL,
-    lastDateOfPurchase TEXT NOT NULL
+    phone TEXT NOT NULL,
+    lastDateOfPurchase DATE NOT NULL
 );
 
 
