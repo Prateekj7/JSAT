@@ -4,6 +4,9 @@ DROP TABLE IF EXISTS item;
 DROP TABLE IF EXISTS supplier;
 DROP TABLE IF EXISTS supplier_item;
 DROP TABLE IF EXISTS order_item;
+DROP TABLE IF EXISTS purchase_order;
+DROP TABLE IF EXISTS customer_purchase;
+DROP TABLE IF EXISTS customer;
 
 CREATE TABLE employee (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -44,9 +47,27 @@ CREATE TABLE supplier_item (
 
 CREATE TABLE order_item (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
-    employee_id INTEGER NOT NULL,
     item_id INTEGER NOT NULL,
     quantity INTEGER NOT NULL,
     FOREIGN KEY (employee_id) REFERENCES employee (id),
     FOREIGN KEY (item_id) REFERENCES item (id)
 );
+
+CREATE TABLE customer_purchase (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    customer_id INTEGER NOT NULL,
+    item_id INTEGER NOT NULL,
+    price INTEGER NOT NULL,
+    FOREIGN KEY (customer_id) REFERENCES employee (id),
+    FOREIGN KEY (item_id) REFERENCES item (id)
+);
+
+CREATE TABLE customer (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name TEXT NOT NULL,
+    email TEXT NOT NULL,
+    password TEXT NOT NULL,
+    lastDateOfPurchase TEXT NOT NULL
+);
+
+
