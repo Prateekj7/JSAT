@@ -1,22 +1,5 @@
 <div id="top"></div>
-<!--
-*** Thanks for checking out the Best-README-Template. If you have a suggestion
-*** that would make this better, please fork the repo and create a pull request
-*** or simply open an issue with the tag "enhancement".
-*** Don't forget to give the project a star!
-*** Thanks again! Now go create something AMAZING! :D
--->
 
-
-
-<!-- PROJECT SHIELDS -->
-<!--
-*** I'm using markdown "reference style" links for readability.
-*** Reference links are enclosed in brackets [ ] instead of parentheses ( ).
-*** See the bottom of this document for the declaration of the reference variables
-*** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
-*** https://www.markdownguide.org/basic-syntax/#reference-style-links
--->
 
 
 
@@ -30,14 +13,12 @@
   <p align="center">
     This app was designed and coded during the JSAT interview round.
     <br />
-    <a href="https://github.com/vg18gupta/Ftx"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/Prateekj7/JSAT"><strong>Explore the docs »</strong></a>
     <br />
-    <br />
-    <a href="https://github.com/vg18gupta/Ftx">View Demo</a>
     ·
-    <a href="https://github.com/vg18gupta/Ftx/issues">Report Bug</a>
+    <a href="https://github.com/Prateekj7/JSAT/issues">Report Bug</a>
     ·
-    <a href="https://github.com/vg18gupta/Ftx/issues">Request Feature</a>
+    <a href="https://github.com/Prateekj7/JSAT/issues">Request Feature</a>
   </p>
 </div>
 
@@ -75,7 +56,7 @@
 
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
 
-This project provides customers a compiled view of rewards from every business which uses our app. This mitigates the problem of having multiple reward cards from each and every major business and gives a chance for small businesses to compete with the major players. Offers can be also created based on Special occasions, Festivals or any way the business owner wants to.
+This project lets small businesses maintain customer records.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -115,14 +96,14 @@ pip3 install flask
    ```sh
    git clone https://github.com/github_username/repo_name.git
    ```
-3. Install NPM packages
-   ```sh
-   npm install
-   ```
-4. Enter your API in `config.js`
-   ```js
-   const API_KEY = 'ENTER YOUR API';
-   ```
+3. Install and Run Flask
+  ```sh
+  python3 -m venv env
+  source env/bin/activate
+  pip install -r requirements.txt
+  flask run
+  ```
+
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
