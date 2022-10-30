@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}Edit Order"{{ order['title'] }}"{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+    <form method="post">
+        <label for="orderDate">Date</label>
+        <input name="orderDate" id="orderDate" value="{{ request.form['orderDate'] }}">
+        <label for="customer_id">customer_id</label>
+        <input name="customer_id" id="customer_id">{{ request.form['customer_id'] }}</input>
+        <label for="price">Price</label>
+        <input name="price" id="price" value="{{ request.form['price'] }}">
+        <input type="submit" value="Save">
+    </form>
+    <hr>
+    <form action="{{ url_for('order.delete', id=order['id']) }}" method="post">
+        <input class="danger" type="submit" value="Delete" onclick="return confirm('Are you sure?');">
+    </form>
+    {% endblock %}
